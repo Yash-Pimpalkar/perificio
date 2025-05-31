@@ -1,157 +1,101 @@
 import React from 'react';
-import Link from 'next/link';
 
-interface FooterLink {
-  label: string;
-  href: string;
-}
+const companyLinks = [
+  { label: 'About', href: '#' },
+  { label: 'Blog', href: '#' },
+  { label: 'Careers', href: '#' },
+  { label: 'Press', href: '#' },
+  { label: 'Partners', href: '#' },
+];
+const serviceLinks = [
+  { label: 'Insurance', href: '#' },
+  { label: 'Tax', href: '#' },
+  { label: 'Wealth', href: '#' },
+  { label: 'Compliance', href: '#' },
+  { label: 'NRI Services', href: '#' },
+];
+const toolLinks = [
+  { label: 'Calculators', href: '#' },
+  { label: 'Estimators', href: '#' },
+  { label: 'Planners', href: '#' },
+  { label: 'Knowledge Base', href: '#' },
+];
+const contactLinks = [
+  { label: 'Email', href: 'mailto:info@perificio.com', icon: '✉️' },
+  { label: 'Phone', href: 'tel:+911234567890', icon: '📞' },
+  { label: 'LinkedIn', href: 'https://linkedin.com', icon: '🔗' },
+  { label: 'Twitter', href: 'https://twitter.com', icon: '🐦' },
+  { label: 'Instagram', href: 'https://instagram.com', icon: '📸' },
+];
+const legalLinks = [
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms & Conditions', href: '#' },
+  { label: 'Cookie Policy', href: '#' },
+  { label: 'Sitemap', href: '#' },
+];
 
-interface SocialLink extends FooterLink {
-  icon: string;
-}
-
-const Footer = () => {
-  const companyLinks: FooterLink[] = [
-    { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' }
-  ];
-
-  const serviceLinks: FooterLink[] = [
-    { label: 'Insurance', href: '/services/insurance' },
-    { label: 'Tax', href: '/services/tax' },
-    { label: 'Wealth', href: '/services/wealth' }
-  ];
-
-  const toolLinks: FooterLink[] = [
-    { label: 'Calculators', href: '/tools/calculators' },
-    { label: 'Estimators', href: '/tools/estimators' }
-  ];
-
-  const socialLinks: SocialLink[] = [
-    { label: 'LinkedIn', href: 'https://linkedin.com', icon: '🔗' },
-    { label: 'Twitter', href: 'https://twitter.com', icon: '🐦' },
-    { label: 'Instagram', href: 'https://instagram.com', icon: '📸' }
-  ];
-
+export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200">
-      <div className="container mx-auto px-4 py-12">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold text-lg mb-4">Company</h3>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.label}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Service Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-3">
-              {serviceLinks.map((link) => (
-                <li key={link.label}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tool Links */}
-          <div>
-            <h3 className="text-gray-900 font-semibold text-lg mb-4">Tools</h3>
-            <ul className="space-y-3">
-              {toolLinks.map((link) => (
-                <li key={link.label}>
-                  <Link 
-                    href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-gray-900 font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-3">
-              <li className="text-gray-600">
-                <a href="mailto:contact@perificio.com" className="hover:text-gray-900 transition-colors duration-200">
-                  contact@perificio.com
-                </a>
-              </li>
-              <li className="text-gray-600">
-                <a href="tel:+919876543210" className="hover:text-gray-900 transition-colors duration-200">
-                  +91 987 654 3210
-                </a>
-              </li>
-              <li className="pt-2">
-                <div className="flex space-x-4">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                      aria-label={social.label}
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              </li>
-            </ul>
-          </div>
+    <footer className="w-full min-h-screen flex flex-col justify-between bg-gray-50 text-gray-800 border-t border-gray-200">
+      <div className="flex-1 flex flex-col lg:flex-row gap-12 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 py-12">
+        {/* Company Info */}
+        <div className="flex-1 min-w-[180px] mb-8 lg:mb-0">
+          <h3 className="text-lg font-bold mb-4 text-blue-700">Company</h3>
+          <ul className="space-y-2">
+            {companyLinks.map(link => (
+              <li key={link.label}><a href={link.href} className="hover:text-blue-600 transition">{link.label}</a></li>
+            ))}
+          </ul>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <p className="text-gray-600 text-sm">
-              © {new Date().getFullYear()} Perificio. All rights reserved.
-            </p>
-
-            {/* Legal Links */}
-            <div className="flex space-x-6">
-              <Link 
-                href="/privacy-policy"
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm"
-              >
-                Privacy Policy
-              </Link>
-              <Link 
-                href="/terms"
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm"
-              >
-                Terms & Conditions
-              </Link>
-            </div>
-          </div>
+        {/* Services */}
+        <div className="flex-1 min-w-[180px] mb-8 lg:mb-0">
+          <h3 className="text-lg font-bold mb-4 text-blue-700">Services</h3>
+          <ul className="space-y-2">
+            {serviceLinks.map(link => (
+              <li key={link.label}><a href={link.href} className="hover:text-blue-600 transition">{link.label}</a></li>
+            ))}
+          </ul>
         </div>
+        {/* Tools */}
+        <div className="flex-1 min-w-[180px] mb-8 lg:mb-0">
+          <h3 className="text-lg font-bold mb-4 text-blue-700">Tools</h3>
+          <ul className="space-y-2">
+            {toolLinks.map(link => (
+              <li key={link.label}><a href={link.href} className="hover:text-blue-600 transition">{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        {/* Contact & Socials */}
+        <div className="flex-1 min-w-[180px] mb-8 lg:mb-0">
+          <h3 className="text-lg font-bold mb-4 text-blue-700">Contact & Socials</h3>
+          <ul className="space-y-2">
+            {contactLinks.map(link => (
+              <li key={link.label} className="flex items-center gap-2">
+                <span>{link.icon}</span>
+                <a href={link.href} className="hover:text-blue-600 transition" target="_blank" rel="noopener noreferrer">{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Newsletter Signup */}
+        <div className="flex-1 min-w-[220px]">
+          <h3 className="text-lg font-bold mb-4 text-blue-700">Newsletter</h3>
+          <form className="flex flex-col gap-3">
+            <input type="email" placeholder="Your email address" className="px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-200" />
+            <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded transition">Subscribe</button>
+          </form>
+          <p className="text-xs text-gray-500 mt-2">Get the latest updates and insights.</p>
+        </div>
+      </div>
+      {/* Legal & Copyright */}
+      <div className="border-t border-gray-200 py-6 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 flex flex-col md:flex-row items-center justify-between bg-white">
+        <div className="flex flex-wrap gap-4 mb-2 md:mb-0">
+          {legalLinks.map(link => (
+            <a key={link.label} href={link.href} className="text-sm hover:text-blue-600 transition">{link.label}</a>
+          ))}
+        </div>
+        <div className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Perificio. All rights reserved.</div>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

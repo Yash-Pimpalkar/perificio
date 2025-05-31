@@ -185,7 +185,7 @@ const Homepage = () => {
         </div>
       </section>
     
-      <Footer />
+    
       {/* Rest of the sections remain the same */}
     </div>
   );
